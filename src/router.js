@@ -13,9 +13,14 @@ const router = createRouter({
   routes: [
     { path: '/', redirect: '/coaches'},
     { path:'/coaches', component: CoachesList },
-    { path:'/coaches/:id', props: true, component: CoachDetail ,children: [
-        { path:'/contact', component: ContactCoach }  //   /coaches/id/contact
-      ]},
+    {
+      path: '/coaches/:id',
+      component: CoachDetail,
+      props: true, //very importatns
+      children: [
+        { path: 'contact', component: ContactCoach } // /coaches/c1/contact
+      ]
+    },
     { path:'/register', component: CoachRegistration },
     { path:'/requests', component: RequestReceive },
     { path:'/:notFound(.*)', component: NotFound }

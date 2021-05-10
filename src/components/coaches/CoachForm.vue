@@ -17,7 +17,7 @@
       </div>
       <div class='form-control'>
          <label for="rate"> Hourly rate </label>
-         <textarea type='number' id='rate' row='5' v-model.number='rate.val' :class="{invalid: !rate.isValid}"> </textarea>
+         <input type='number' id='rate' row='5' v-model.number='rate.val' :class="{invalid: !rate.isValid}"> </input>
       </div>
       <div class='form-control' :class="{invalid: !areas.isValid}">
          <h3> Area of experties </h3>

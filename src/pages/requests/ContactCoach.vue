@@ -6,7 +6,7 @@
       </div>
       <div class='form-control'>
          <label for='message'> Message</label>
-         <input type='email' id='message' rows='5' v-model.trim='message'/>
+         <input type='text' id='message' rows='5' v-model.trim='message'/>
       </div>
       <p class='errors' v-if='!formIsValid'> There are some error </p>
       <div class='actions'>
@@ -31,7 +31,12 @@ export default {
             this.formIsValid = false;
             return
          }
-
+         this.$store.dispatch('requests/contactCoach',{
+            email: this.email,
+            message: this.message,
+            coachId: this.$route.params.id, //prende l'id dalla route contact/c3
+         })
+         this.$router.push('/coaches');
 
       }
    }
